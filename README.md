@@ -1,2 +1,2 @@
 # buyers-ball
-A place where buyers remosre is non-existent 
+A place where buyers remorse is non-existent 
