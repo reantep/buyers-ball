@@ -9,7 +9,9 @@ import {
   Label,
   Loader,
   Message,
-  Segment
+  Segment,
+  Button,
+  Icon
 } from "semantic-ui-react";
 import { productListURL, addToCartURL } from "../constants";
 import { fetchCart } from "../store/actions/cart";
@@ -86,7 +88,7 @@ class ProductList extends React.Component {
                   </Item.Meta>
                   <Item.Description>{item.description}</Item.Description>
                   <Item.Extra>
-                    {/* <Button
+                    <Button
                       primary
                       floated="right"
                       icon
@@ -95,7 +97,7 @@ class ProductList extends React.Component {
                     >
                       Add to cart
                       <Icon name="cart plus" />
-                    </Button> */}
+                    </Button>
                     {item.discount_price && (
                       <Label
                         color={
