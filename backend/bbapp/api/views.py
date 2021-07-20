@@ -32,14 +32,15 @@ class UserIDView(APIView):
 
 class ItemListView(ListAPIView):
     permission_classes = (AllowAny,)
-    serializer_class = ItemSerializer
     queryset = Item.objects.all()
+    serializer_class = ItemSerializer
 
 
 class ItemDetailView(RetrieveAPIView):
     permission_classes = (AllowAny,)
-    serializer_class = ItemDetailSerializer
     queryset = Item.objects.all()
+    serializer_class = ItemDetailSerializer
+
 
 
 class OrderQuantityUpdateView(APIView):
@@ -139,7 +140,7 @@ class OrderDetailView(RetrieveAPIView):
             return order
         except ObjectDoesNotExist:
             raise Http404("You do not have an active order")
-            # return Response({"message": "You do not have an active order"}, status=HTTP_400_BAD_REQUEST)
+            return Response({"message": "You do not have an active order"}, status=HTTP_400_BAD_REQUEST)
 
 
 class PaymentView(APIView):

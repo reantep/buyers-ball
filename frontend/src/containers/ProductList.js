@@ -1,3 +1,4 @@
+  
 import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
@@ -41,7 +42,7 @@ class ProductList extends React.Component {
     authAxios
       .post(addToCartURL, { slug })
       .then(res => {
-        this.props.refreshCart();
+        this.props.fetchCart();
         this.setState({ loading: false });
       })
       .catch(err => {
@@ -124,7 +125,7 @@ class ProductList extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    refreshCart: () => dispatch(fetchCart())
+    fetchCart: () => dispatch(fetchCart())
   };
 };
 

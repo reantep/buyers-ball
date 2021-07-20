@@ -13,10 +13,15 @@ import {
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
+import { fetchCart } from "../store/actions/cart";
 
 class CustomLayout extends React.Component {
+  componentDidMount() {
+    this.props.fetchCart();
+  }
+
   render() {
-    const { authenticated } = this.props;
+    const { authenticated, cart, loading } = this.props;
     return (
       <div>
         <Menu inverted>
@@ -24,23 +29,65 @@ class CustomLayout extends React.Component {
             <Link to="/">
               <Menu.Item header>Home</Menu.Item>
             </Link>
+            <Link to="/products">
+              <Menu.Item header>Products</Menu.Item>
+            </Link>
             {authenticated ? (
-              <Menu.Item header onClick={() => this.props.logout()}>
-                Logout
-              </Menu.Item>
-            ) : (
               <React.Fragment>
+                <Menu.Menu position="right">
+                  <Link to="/profile">
+                    <Menu.Item>Profile</Menu.Item>
+                  </Link>
+                  <Dropdown
+                    icon="cart"
+                    loading={loading}
+                    text={`${cart !== null ? cart.order_items.length : 0}`}
+                    pointing
+                    className="link item"
+                  >
+                    <Dropdown.Menu>
+                      {cart !== null ? (
+                        <React.Fragment>
+                          {cart.order_items.map(order_item => {
+                            return (
+                              <Dropdown.Item key={order_item.id}>
+                                {order_item.quantity} x {order_item.item.title}
+                              </Dropdown.Item>
+                            );
+                          })}
+                          {cart.order_items.length < 1 ? (
+                            <Dropdown.Item>No items in your cart</Dropdown.Item>
+                          ) : null}
+                          <Dropdown.Divider />
+
+                          <Dropdown.Item
+                            icon="arrow right"
+                            text="Checkout"
+                            onClick={() =>
+                              this.props.history.push("/order-summary")
+                            }
+                          />
+                        </React.Fragment>
+                      ) : (
+                        <Dropdown.Item>No items in your cart</Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Menu.Item header onClick={() => this.props.logout()}>
+                    Logout
+                  </Menu.Item>
+                </Menu.Menu>
+              </React.Fragment>
+            ) : (
+              <Menu.Menu position="right">
                 <Link to="/login">
                   <Menu.Item header>Login</Menu.Item>
                 </Link>
                 <Link to="/signup">
                   <Menu.Item header>Signup</Menu.Item>
                 </Link>
-              </React.Fragment>
+              </Menu.Menu>
             )}
-             <Link to="/products">
-              <Menu.Item header>Products</Menu.Item>
-            </Link>
           </Container>
         </Menu>
 
@@ -53,39 +100,14 @@ class CustomLayout extends React.Component {
         >
           <Container textAlign="center">
             <Grid divided inverted stackable>
-              <Grid.Column width={3}>
-                <Header inverted as="h4" content="Group 1" />
+              <Grid.Column width={50}>
+                <Header inverted as="h4" content="Link Trunk" />
                 <List link inverted>
-                  <List.Item as="a">Link One</List.Item>
-                  <List.Item as="a">Link Two</List.Item>
-                  <List.Item as="a">Link Three</List.Item>
-                  <List.Item as="a">Link Four</List.Item>
+                  <List.Item as="a">About us</List.Item>
+                  <List.Item as="a">Upcoming Events</List.Item>
+                  <List.Item as="a">Releases</List.Item>
+                  <List.Item as="a">Employment Oppurtunities</List.Item>
                 </List>
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <Header inverted as="h4" content="Group 2" />
-                <List link inverted>
-                  <List.Item as="a">Link One</List.Item>
-                  <List.Item as="a">Link Two</List.Item>
-                  <List.Item as="a">Link Three</List.Item>
-                  <List.Item as="a">Link Four</List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <Header inverted as="h4" content="Group 3" />
-                <List link inverted>
-                  <List.Item as="a">Link One</List.Item>
-                  <List.Item as="a">Link Two</List.Item>
-                  <List.Item as="a">Link Three</List.Item>
-                  <List.Item as="a">Link Four</List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column width={7}>
-                <Header inverted as="h4" content="Footer Header" />
-                <p>
-                  Extra space for a call to action inside the footer that could
-                  help re-engage users.
-                </p>
               </Grid.Column>
             </Grid>
 
@@ -114,13 +136,16 @@ class CustomLayout extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    authenticated: state.auth.token !== null
+    authenticated: state.auth.token !== null,
+    cart: state.cart.shoppingCart,
+    loading: state.cart.loading
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchCart: () => dispatch(fetchCart())
   };
 };
 

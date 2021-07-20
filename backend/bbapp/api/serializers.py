@@ -24,6 +24,7 @@ class CouponSerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField()
     label = serializers.SerializerMethodField()
+    image = serializers.ImageField(allow_null=True)
 
     class Meta:
         model = Item
