@@ -1,4 +1,4 @@
-const localhost = "https://bbapp-backend-production.herokuapp.com/";
+const localhost = "https://bbapp-backend-production.herokuapp.com";
 
 const apiURL = "/api";
 
