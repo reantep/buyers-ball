@@ -41,7 +41,7 @@ class CustomLayout extends React.Component {
                   <Dropdown
                     icon="cart"
                     loading={loading}
-                    // text={`${cart !== null ? cart.order_items.length : 0}`}
+                    text={`${cart !== null ? cart.order_items.length : 0}`}
                     pointing
                     className="link item"
                   >
