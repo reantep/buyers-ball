@@ -94,6 +94,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
