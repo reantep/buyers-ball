@@ -49,17 +49,17 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
+        return reverse("bbapp:product", kwargs={
             'slug': self.slug
         })
 
     def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
+        return reverse("bbapp:add-to-cart", kwargs={
             'slug': self.slug
         })
 
     def get_remove_from_cart_url(self):
-        return reverse("core:remove-from-cart", kwargs={
+        return reverse("bbapp:remove-from-cart", kwargs={
             'slug': self.slug
         })
 
