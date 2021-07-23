@@ -38,7 +38,7 @@ class CustomLayout extends React.Component {
                   <Link to="/profile">
                     <Menu.Item>Profile</Menu.Item>
                   </Link>
-                  {/* <Dropdown
+                  <Dropdown
                     icon="cart"
                     loading={loading}
                     // text={`${cart !== null ? cart.order_items.length : 0}`}
@@ -72,7 +72,7 @@ class CustomLayout extends React.Component {
                         <Dropdown.Item>No items in your cart</Dropdown.Item>
                       )}
                     </Dropdown.Menu>
-                  </Dropdown> */}
+                  </Dropdown>
                   <Menu.Item header onClick={() => this.props.logout()}>
                     Logout
                   </Menu.Item>
