@@ -98,7 +98,6 @@ class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     item_variations = models.ManyToManyField(ItemVariation)
     quantity = models.IntegerField(default=1)
-    image = CloudinaryField('image', blank= True, null= True)
 
 
     def __str__(self):
