@@ -82,6 +82,8 @@ class OrderItemSerializer(serializers.ModelSerializer):
     item_variations = serializers.SerializerMethodField()
     item = serializers.SerializerMethodField()
     final_price = serializers.SerializerMethodField()
+    image = serializers.ImageField(allow_null=True)
+
 
     class Meta:
         model = OrderItem
@@ -90,7 +92,8 @@ class OrderItemSerializer(serializers.ModelSerializer):
             'item',
             'item_variations',
             'quantity',
-            'final_price'
+            'final_price',
+            'image',
         )
 
     def get_item(self, obj):
