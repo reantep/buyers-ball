@@ -94,7 +94,8 @@ class ProductList extends React.Component {
                       floated="right"
                       icon
                       labelPosition="right"
-                      onClick={() => this.handleAddToCart(item.slug)}
+                      onClick={() =>{ this.handleAddToCart(item.slug);
+                                          window.location.reload()}}
                     >
                       Add to cart
                       <Icon name="cart plus" />
