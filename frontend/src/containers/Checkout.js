@@ -41,7 +41,7 @@ const OrderPreview = props => {
                 <Item key={i}>
                   <Item.Image
                     size="tiny"
-                    src={`https://bbapp-backend-production.herokuapp.com${orderItem.item.image}`}
+                    src={orderItem.item.image}
                   />
                   <Item.Content verticalAlign="middle">
                     <Item.Header as="a">
