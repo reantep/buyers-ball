@@ -183,7 +183,8 @@ class OrderSummary extends React.Component {
                         name="trash"
                         color="red"
                         style={{ float: "right", cursor: "pointer" }}
-                        onClick={() => this.handleRemoveItem(orderItem.id)}
+                        onClick={() => this.handleRemoveItem(orderItem.id),
+                                            window.location.reload()}
                       />
                     </Table.Cell>
                   </Table.Row>
