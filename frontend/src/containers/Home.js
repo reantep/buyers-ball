@@ -10,7 +10,7 @@ import {
   Sidebar,
   Visibility
 } from 'semantic-ui-react';
-import ImgShoes from "../images/fpb-bbapp.JPG";
+import ImgShoes from "../images/homepge.PNG";
 
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
