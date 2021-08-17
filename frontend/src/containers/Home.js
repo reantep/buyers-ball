@@ -85,20 +85,7 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "You'll love the way you look"
-            </Header>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "0em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "Buyers remorse dosent exist here!"
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <img src={ImgShoes} class="ui fluid image " />
     </Segment>
     <Segment style={{ padding: "0em 0em" }} vertical>
       <Container text>
@@ -110,7 +97,6 @@ const HomepageLayout = () => (
         >
           <a href="/products">Buyers Ball</a>
         </Divider>
-        <img src={ImgShoes} class="ui fluid image " />
         <Divider
           as="h1"
           className="header"
