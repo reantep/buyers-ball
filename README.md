@@ -10,6 +10,11 @@ E-Commerce web app using React frontend and Django backend.
 
 <a href="https://bbapp-backend-production.herokuapp.com/" rel="nofollow"> API LIVE DEMO</a>
 
+# Tech used
+```
+* Frontend : React & Redux
+* Backend : Django
+```
 
 # How to install  
 1. Git Clone
