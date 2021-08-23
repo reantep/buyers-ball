@@ -90,14 +90,6 @@ const HomepageLayout = () => (
     <Segment style={{ padding: "0em 0em" }} vertical>
       <Container text>
         <Divider
-          as="h4"
-          className="header"
-          horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="/products">Buyers Ball</a>
-        </Divider>
-        <Divider
           as="h1"
           className="header"
           horizontal
