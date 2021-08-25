@@ -68,6 +68,7 @@ class RegistrationForm extends React.Component {
                   iconPosition="left"
                   placeholder="E-mail address"
                 />
+                <h5>Password must be 8 characters conatain one uppercase and one alphabet.</h5>
                 <Form.Input
                   onChange={this.handleChange}
                   fluid
@@ -78,7 +79,6 @@ class RegistrationForm extends React.Component {
                   placeholder="Password"
                   type="password"
                 />
-                <h4>Password must be 8 characters.</h4>
                 <Form.Input
                   onChange={this.handleChange}
                   fluid
