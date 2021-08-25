@@ -10,6 +10,8 @@ import {
   Menu,
   Segment
 } from "semantic-ui-react";
+import Bblogo from "../images/buyersball-logo.PNG"
+
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
@@ -112,6 +114,7 @@ class CustomLayout extends React.Component {
             </Grid>
 
             <Divider inverted section />
+            <Image centered size="mini" src={Bblogo} />
             <List horizontal inverted divided link size="small">
               <List.Item as="a" href="#">
                 Site Map
