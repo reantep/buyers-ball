@@ -78,6 +78,7 @@ class RegistrationForm extends React.Component {
                   placeholder="Password"
                   type="password"
                 />
+                <h4>Password must be 8 characters.</h4>
                 <Form.Input
                   onChange={this.handleChange}
                   fluid
