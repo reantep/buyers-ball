@@ -111,10 +111,11 @@ class ProductList extends React.Component {
                         }
                       >
                         {item.label} {item.discount_price && (
-                          <p>{item.discount_price}</p>
+                          <p>${item.discount_price}</p>
                         )}
                       </Label>
                     )}
+                    <p>${item.price}</p>
                   </Item.Extra>
                 </Item.Content>
               </Item>
