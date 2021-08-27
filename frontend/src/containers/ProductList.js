@@ -104,7 +104,7 @@ class ProductList extends React.Component {
                       <Label
                       color="green" ribbon>
                       ON SALE 
-                        {item.label} {item.discount_price && (
+                        {item.discount_price && (
                           <p>${item.discount_price}</p>
                         )}
                       </Label>
