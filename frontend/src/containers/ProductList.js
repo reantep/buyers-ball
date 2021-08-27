@@ -102,14 +102,8 @@ class ProductList extends React.Component {
                     </Button>
                     {item.discount_price && (
                       <Label
-                        color={
-                          item.label === "primary"
-                            ? "blue"
-                            : item.label === "On sale"
-                            ? "green"
-                            : "olive"
-                        }
-                      >
+                      color="green" ribbon>
+                      ON SALE 
                         {item.label} {item.discount_price && (
                           <p>${item.discount_price}</p>
                         )}
