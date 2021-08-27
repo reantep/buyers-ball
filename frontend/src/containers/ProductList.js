@@ -100,17 +100,17 @@ class ProductList extends React.Component {
                       Add to cart
                       <Icon name="cart plus" />
                     </Button>
-                    {orderItem.item.discount_price && (
+                    {item.discount_price && (
                       <Label
                         color={
                           item.label === "primary"
                             ? "blue"
-                            : item.label === "secondary"
+                            : item.label === "On sale"
                             ? "green"
                             : "olive"
                         }
                       >
-                        {item.label}
+                        {item.label} {item.discount_price}
                       </Label>
                     )}
                   </Item.Extra>

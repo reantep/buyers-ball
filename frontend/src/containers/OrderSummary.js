@@ -175,7 +175,7 @@ class OrderSummary extends React.Component {
                     <Table.Cell>
                       {orderItem.item.discount_price && (
                         <Label color="green" ribbon>
-                          ON DISCOUNT
+                          ON DISCOUNT 
                         </Label>
                       )}
                       ${orderItem.final_price}
