@@ -110,7 +110,9 @@ class ProductList extends React.Component {
                             : "olive"
                         }
                       >
-                        {item.label} {item.discount_price}
+                        {item.label} {item.discount_price && (
+                          <p>{item.discount_price}</p>
+                        )}
                       </Label>
                     )}
                   </Item.Extra>
