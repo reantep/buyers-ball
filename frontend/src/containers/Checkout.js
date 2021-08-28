@@ -332,15 +332,11 @@ class CheckoutForm extends Component {
                 </p>
               </Message>
             )}
-            <Button
-             loading={loading}
-              disabled={loading}
-              primary
-              onClick="window.location.href='https://bbapp-frontend-production.herokuapp.com/checkouterror'"
-              style={{ marginTop: "10px" }} 
-            >
-              Submit
-            </Button>
+            <link to="/checkouterror">
+              <Button>
+                <p>submit</p>
+              </Button>
+            </link>
           </React.Fragment>
         )}
       </div>
