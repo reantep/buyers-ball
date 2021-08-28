@@ -13,7 +13,7 @@ import {
 
 
 
-const CheckouterrorLayout = () => (
+const CheckoutErrorLayout = () => (
     <ResponsiveContainer>
       <Segment style={{ padding: "0em" }} vertical>
           <p>
@@ -37,4 +37,4 @@ const CheckouterrorLayout = () => (
       </Segment>
     </ResponsiveContainer>
   );
-  export default CheckouterrorLayout;
+  export default CheckoutErrorLayout;
