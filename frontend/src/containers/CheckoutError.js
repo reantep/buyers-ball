@@ -16,7 +16,9 @@ import {
 const CheckouterrorLayout = () => (
     <ResponsiveContainer>
       <Segment style={{ padding: "0em" }} vertical>
-        <img src={ImgShoes} class="ui fluid image " />
+          <p>
+              <h1>Sorry but our payment system is under maintenance please contact admin @ ReantePatterson@gmail.com</h1>
+          </p>
       </Segment>
       <Segment style={{ padding: "0em 0em" }} vertical>
         <Container text>

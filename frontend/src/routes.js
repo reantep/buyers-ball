@@ -18,6 +18,7 @@ const BaseRouter = () => (
     <Route path="/login" component={Login} />
     <Route path="/signup" component={Signup} />
     <Route path="/order-summary" component={OrderSummary} />
+    <Route path="/CheckoutError" component={CheckoutError} />
     <Route path="/checkout" component={Checkout} />
     <Route path="/profile" component={Profile} />
     <Route exact path="/" component={HomepageLayout} />
