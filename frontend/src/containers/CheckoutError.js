@@ -11,14 +11,90 @@ import {
   Visibility
 } from 'semantic-ui-react';
 
+const getWidth = () => {
+    const isSSR = typeof window === "undefined";
+    return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
+  };
+  
+  class DesktopContainer extends Component {
+    state = {};
+  
+    hideFixedMenu = () => this.setState({ fixed: false });
+    showFixedMenu = () => this.setState({ fixed: true });
+  
+    render() {
+      const { children } = this.props;
+      const { fixed } = this.state;
+  
+      return (
+        <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+          <Visibility
+            once={false}
+            onBottomPassed={this.showFixedMenu}
+            onBottomPassedReverse={this.hideFixedMenu}
+          />
+          {children}
+        </Responsive>
+      );
+    }
+  }
+  
+  DesktopContainer.propTypes = {
+    children: PropTypes.node
+  };
+  
+  class MobileContainer extends Component {
+    state = {};
+  
+    handleSidebarHide = () => this.setState({ sidebarOpened: false });
+  
+    handleToggle = () => this.setState({ sidebarOpened: true });
+  
+    render() {
+      const { children } = this.props;
+      const { sidebarOpened } = this.state;
+  
+      return (
+        <Responsive
+          as={Sidebar.Pushable}
+          getWidth={getWidth}
+          maxWidth={Responsive.onlyMobile.maxWidth}
+        >
+          {children}
+        </Responsive>
+      );
+    }
+  }
+  
+  MobileContainer.propTypes = {
+    children: PropTypes.node
+  };
+  
+  const ResponsiveContainer = ({ children }) => (
+    <div>
+      <DesktopContainer>{children}</DesktopContainer>
+      <MobileContainer>{children}</MobileContainer>
+    </div>
+  );
+  
+  ResponsiveContainer.propTypes = {
+    children: PropTypes.node
+  };
 
 
 const CheckoutErrorLayout = () => (
     <ResponsiveContainer>
-      <Segment style={{ padding: "0em" }} vertical>
-          <p>
-              <h1>Sorry but our payment system is under maintenance please contact admin @ ReantePatterson@gmail.com</h1>
-          </p>
+      <Segment style={{ padding: "0em 0em" }} vertical>
+        <container text>
+            <Divider
+                as="h1"
+                className="header"
+                horizontal
+                style={{ margin: "3em 0em "}}>
+                    <p>Sorry but our payment system is under maintenance. Please contact admin at: ReantePatterson@gmail.com, Thankyou</p>
+            </Divider>
+        </container>
+
       </Segment>
       <Segment style={{ padding: "0em 0em" }} vertical>
         <Container text>

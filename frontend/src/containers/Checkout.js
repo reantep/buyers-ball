@@ -333,11 +333,11 @@ class CheckoutForm extends Component {
               </Message>
             )}
             <Button
-              loading={loading}
+             loading={loading}
               disabled={loading}
               primary
-              onClick={this.submit}
-              style={{ marginTop: "10px" }}
+              onClick="window.location.href='https://bbapp-frontend-production.herokuapp.com/checkouterror'"
+              style={{ marginTop: "10px" }} 
             >
               Submit
             </Button>

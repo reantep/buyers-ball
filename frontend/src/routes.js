@@ -10,7 +10,7 @@ import ProductDetail from "./containers/ProductDetail";
 import OrderSummary from "./containers/OrderSummary";
 import Checkout from "./containers/Checkout";
 import Profile from "./containers/Profile";
-import CheckouterrorLayout from "./containers/CheckoutError";
+import CheckoutErrorLayout from "./containers/CheckoutError";
 
 const BaseRouter = () => (
   <Hoc>
