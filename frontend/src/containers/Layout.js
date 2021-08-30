@@ -26,8 +26,8 @@ class CustomLayout extends React.Component {
     const { authenticated, cart, loading } = this.props;
     return (
       <div>
-        <Menu inverted>
-          <Container style={{ margin: "0em 0em" }}>
+        <Menu inverted style={{ margin: "0em 0em" }}>
+          <Container>
             <Link to="/">
               <Menu.Item header>Home</Menu.Item>
             </Link>
