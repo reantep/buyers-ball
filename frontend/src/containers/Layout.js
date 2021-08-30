@@ -27,7 +27,7 @@ class CustomLayout extends React.Component {
     return (
       <div>
         <Menu inverted>
-          <Container>
+          <Container style={{ margin: "0em 0em" }}>
             <Link to="/">
               <Menu.Item header>Home</Menu.Item>
             </Link>
@@ -98,7 +98,7 @@ class CustomLayout extends React.Component {
         <Segment
           inverted
           vertical
-          style={{ margin: "0em 0em 0em", padding: "0em 0em" }}
+          style={{ margin: "5em 0em 0em", padding: "5em 0em" }}
         >
           <Container textAlign="center">
             <Grid divided inverted stackable>
