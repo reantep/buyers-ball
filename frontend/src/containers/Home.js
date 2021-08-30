@@ -93,7 +93,7 @@ const HomepageLayout = () => (
           as="h1"
           className="header"
           horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
+          style={{ margin: "0em 0em", textTransform: "uppercase" }}
         >
           <a href="/products">Shop</a>
         </Divider>
