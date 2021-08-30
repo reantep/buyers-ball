@@ -84,7 +84,7 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "0em" }} vertical>
+    <Segment style={{ padding: "0em", margin: "0em 0em" }} vertical>
       <img src={ImgShoes} class="ui fluid image " />
     </Segment>
     <Segment style={{ padding: "0em 0em" }} vertical>
