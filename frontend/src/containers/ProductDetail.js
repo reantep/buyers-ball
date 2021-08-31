@@ -197,7 +197,7 @@ class ProductDetail extends React.Component {
                               {iv.attachment && (
                                 <Item.Image
                                   size="tiny"
-                                  src={`http://127.0.0.1:8000${iv.attachment}`}
+                                  src={`https://bbapp-backend-production.herokuapp.com${iv.attachment}`}
                                 />
                               )}
                               <Item.Content verticalAlign="middle">
