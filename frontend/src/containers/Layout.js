@@ -25,7 +25,7 @@ class CustomLayout extends React.Component {
   render() {
     const { authenticated, cart, loading } = this.props;
     return (
-      <div>
+      <div  style={{ height: "100%" }}>
         <Menu inverted style={{ margin: "0em 0em" }}>
           <Container>
             <Link to="/">
@@ -85,7 +85,7 @@ class CustomLayout extends React.Component {
                 <Link to="/login">
                   <Menu.Item header>Login</Menu.Item>
                 </Link>
-                <Link to="/signup">
+                <Link to="/signup" id='signupredirect'>
                   <Menu.Item header>Signup</Menu.Item>
                 </Link>
               </Menu.Menu>
@@ -98,7 +98,7 @@ class CustomLayout extends React.Component {
         <Segment
           inverted
           vertical
-          style={{ margin: "5em 0em 0em", padding: "5em 0em" }}
+          style={{ margin: "5em 0em 0em", padding: "5em 0em"}}
         >
           <Container textAlign="center">
             <Grid divided inverted stackable>

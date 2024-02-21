@@ -39,9 +39,17 @@ class ProductDetail extends React.Component {
 
   handleToggleForm = () => {
     const { formVisible } = this.state;
-    this.setState({
-      formVisible: !formVisible
-    });
+    const signupRedirect = document.getElementById('signupredirect');
+    const storedToken = localStorage.getItem('token');
+    console.log(storedToken);
+    if(storedToken.length){
+      this.setState({
+        formVisible: !formVisible
+      });
+    }else {
+     signupRedirect.click(); 
+    }
+
   };
 
   handleFetchItem = () => {
@@ -93,6 +101,7 @@ class ProductDetail extends React.Component {
   render() {
     const { data, error, formData, formVisible, loading } = this.state;
     const item = data;
+    const cloudinaryURL = "http://res.cloudinary.com/rp1994/";
     return (
       <Container>
         {error && (
@@ -115,7 +124,7 @@ class ProductDetail extends React.Component {
             <Grid.Column>
               <Card
                 fluid
-                image={item.image}
+                image= {`${cloudinaryURL}${item.image}`}
                 header={item.title}
                 meta={
                   <React.Fragment>
@@ -197,7 +206,7 @@ class ProductDetail extends React.Component {
                               {iv.attachment && (
                                 <Item.Image
                                   size="tiny"
-                                  src={`https://bbapp-backend-production.herokuapp.com${iv.attachment}`}
+                                  src={`http://127.0.0.1:8000${iv.attachment}`}
                                 />
                               )}
                               <Item.Content verticalAlign="middle">

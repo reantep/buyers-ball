@@ -53,7 +53,9 @@ class ProductList extends React.Component {
   render() {
     const { data, error, loading } = this.state;
     return (
-      <Container>
+      <Container
+        style={{ margin: "2em 0em", height: "100%"}}
+      >
         {error && (
           <Message
             error
